@@ -161,12 +161,11 @@ sed -i "s/#check_requirements()/check_requirements()/g" $driver_dir/displaylink-
 echo -e "\nInstalling ... \n"
 cd $driver_dir/displaylink-driver-${version} && sudo ./displaylink-installer.sh install
 
-echo -e "\nNew UDEV rules ... \n"
-printf "ACTION==\"add\", SUBSYSTEMS==\"usb\", ATTRS{idVendor}==\"17e9\", ATTRS{idProduct}==\"4307\" RUN+=\"/bin/systemctl start displaylink.service\"\nACTION==\"remove\", SUBSYSTEMS==\"usb\", ATTRS{idVendor}==\"17e9\", ATTRS{idProduct}==\"4307\" RUN+=\"/bin/sh -c '/bin/systemctl stop displaylink.service; /usr/bin/xrandr --output eDP1 --auto'\"\n" | sudo tee /etc/udev/rules.d/99-displaylink.rules
-
-sudo systemctl disable displaylink.service
-
-sudo udevadm control --reload-rules
+#Remove comments to load and unload the displaylink.service based on usb plug/unplug
+#echo -e "\nNew UDEV rules ... \n"
+#printf "ACTION==\"add\", SUBSYSTEMS==\"usb\", ATTRS{idVendor}==\"17e9\", ATTRS{idProduct}==\"4307\" RUN+=\"/bin/systemctl start displaylink.service\"\nACTION==\"remove\", SUBSYSTEMS==\"usb\", ATTRS{idVendor}==\"17e9\", ATTRS{idProduct}==\"4307\" RUN+=\"/bin/sh -c '/bin/systemctl stop displaylink.service; /usr/bin/xrandr --output eDP1 --auto'\"\n" | sudo tee /etc/udev/rules.d/99-displaylink.rules
+#sudo systemctl disable displaylink.service
+#sudo udevadm control --reload-rules
 
 echo -e "\nInstall complete, please reboot to apply the changes\n"
 }
