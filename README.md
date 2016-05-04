@@ -29,5 +29,5 @@ How? Just run the script! (as regular user)
 
 #### References
 
-*https://github.com/AdnanHodzic/displaylink-debian
-*https://github.com/sinfomicien/displaylink-evdi-opensuse
+* https://github.com/AdnanHodzic/displaylink-debian
+* https://github.com/sinfomicien/displaylink-evdi-opensuse
