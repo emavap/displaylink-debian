@@ -20,7 +20,7 @@ How? Just run the script! (as regular user)
 
 * Downloads and extracts contents of original [DisplayLink Ubuntu driver] (http://www.displaylink.com/downloads/ubuntu.php>)
 
-* _displaylink-debian.sh_ will modify contents of original _displaylink-installer.sh_ and customize it for Debian. After which install/uninstall is performed. 
+* _displaylink-debian.sh_ will modify contents of original _displaylink-installer.sh_ and patch the evdi drivers for the 4.5 kernel. After which install/uninstall is performed. 
 
 * Supported platforms are: 
   * Debian: Jessie/Stretch/Sid (regardless of which kernel version you're using.)
@@ -29,5 +29,5 @@ How? Just run the script! (as regular user)
 
 #### References
 
-https://github.com/AdnanHodzic/displaylink-debian
-https://github.com/sinfomicien/displaylink-evdi-opensuse
+*https://github.com/AdnanHodzic/displaylink-debian
+*https://github.com/sinfomicien/displaylink-evdi-opensuse
